@@ -8,9 +8,7 @@ import mockup2 from "../assets/images/mockup2.png";
 import mockup3 from "../assets/images/mockup3.png";
 import proces1 from "../assets/images/proces1.png";
 import proces2 from "../assets/images/proces2.png";
-const images = await Astro.glob("/src/assets/images/galleri/*").then(files => {
-  return files.map(file => file.default);
-});
+
 ---
 <MainLayout title="Titel">
 	 <style>
@@ -19,15 +17,38 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then(files => {
             border-bottom: 2px solid #00FF00; /* Green line */
         }
         .square {
-            width: 200px;
-            height: 200px;
+            width: 300px; /* Make the square wider */
+            height: 150px; /* Make the square shorter */
             border: 2px solid #00FF00; /* Green border */
+        }
+        .square p {
+            font-size: 14px; /* Decrease font size */
+        }
+
+             .button {
+            border: 2px solid #00FF00; /* Green border */
+            color: #00FF00; /* Green text color */
+            padding: 8px 16px; /* Padding for button */
+            margin-right: 10px; /* Margin between buttons */
+        }
+
+            .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
 
 <body>
     <div class="container mx-auto">
+
+          <!-- Buttons -->
+        <div class="text-right mb-4">
+            <button class="button">Button 1</button>
+            <button class="button">Button 2</button>
+        </div>
         <!-- Green line -->
         <div class="green-line mb-4"></div>
         
@@ -42,5 +63,17 @@ const images = await Astro.glob("/src/assets/images/galleri/*").then(files => {
                 <p class="text-center px-4">Ideen bag denne typografi er at skabe en balance mellem det bløde og hårde, kantede og formede, udadvendte og indadvendte</p>
             </div>
         </div>
+          <!-- Two columns section -->
+        <div class="flex justify-center mb-8">
+            <!-- Column 1 -->
+            <div class="column w-1/2 px-4">
+                <h1 class="text-green-500 font-bold">Om typografien</h1>
+                <h3 class="text-green-500 font-bold">En enkel men unik display font, der minder læseren om at finde balancen i tilværelsen.</h3>
+                <p>Balance skrifttypen er ikke kun visuelt tiltalende, men den formidler også en symbolsk betydning. Den minder os om vigtigheden af balance i vores liv - en balance mellem arbejde og hvile, mellem ambitioner og realiteter, mellem krop og sind. Gennem sine former og design opmuntrer Balance os til at søge efter harmoni i alt, hvad vi gør. Uanset om den bruges i trykte medier eller på skærmen, tilføjer Balance skrifttypen en subtil elegance og en følelse af ro til enhver tekst. Med sit enkle, men kraftfulde udtryk, minder den os om den skønhed, der findes i balance og symmetri.</p>
+            </div>
+            <!-- Column 2 -->
+            <div class="column w-1/2 px-4">
+                	<Image src={mockup1} alt="Københavnerbilleder bogforside" class="mx-auto" />
+            </div>
     </div>
 </body>
