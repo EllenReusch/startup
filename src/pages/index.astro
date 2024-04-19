@@ -11,69 +11,136 @@ import proces2 from "../assets/images/proces2.png";
 
 ---
 <MainLayout title="Titel">
-	 <style>
+    <style>
         /* Custom styles */
+
+          header {
+                display: none;
+            }
+        body {
+            background-color: #FFF3E2; /* Set background color */
+        }
         .green-line {
-            border-bottom: 2px solid #00FF00; /* Green line */
+            border-bottom: 2px solid #0DB262; /* Updated to new green color */
+            margin-bottom: 20px; /* Added margin to space it out */
+            border-radius: 8px; /* Rounded corners */
         }
         .square {
             width: 300px; /* Make the square wider */
             height: 150px; /* Make the square shorter */
-            border: 2px solid #00FF00; /* Green border */
+            border: 2px solid #0DB262; /* Updated to new green color */
+            padding: 20px; /* Added padding */
+            margin-bottom: 20px; /* Added margin to space it out */
+            border-radius: 8px; /* Rounded corners */
+            margin-top: 30px;
         }
         .square p {
             font-size: 14px; /* Decrease font size */
         }
-
-             .button {
-            border: 2px solid #00FF00; /* Green border */
-            color: #00FF00; /* Green text color */
-            padding: 8px 16px; /* Padding for button */
+        .button {
+            border: 2px solid #0DB262; /* Updated to new green color */
+            color: #0DB262; /* Updated to new green color */
+            padding: 12px 20px; /* Increased padding */
             margin-right: 10px; /* Margin between buttons */
+            border-radius: 8px; /* Rounded corners */
+            margin-top: 30px; /* Added margin top */
         }
-
-            .column {
+        .column {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 20px; /* Added padding */
+            margin-bottom: 20px; /* Added margin to space it out */
+        }
+        .column img {
+            max-width: 100%; /* Ensure image does not exceed column width */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .mb-8 {
+            margin-bottom: 40px; /* Increased margin-bottom for better spacing */
+        }
+        .mb-4 {
+            margin-bottom: 20px; /* Increased margin-bottom for better spacing */
+        }
+        .text-green {
+            color: #0DB262; /* Updated to new green color */
         }
     </style>
-</head>
 
-<body>
-    <div class="container mx-auto">
+    <body>
+        <div class="container mx-auto">
 
-          <!-- Buttons -->
-        <div class="text-right mb-4">
-            <button class="button">Button 1</button>
-            <button class="button">Button 2</button>
-        </div>
-        <!-- Green line -->
-        <div class="green-line mb-4"></div>
-        
-        <!-- Picture -->
-        <div class="text-center mb-4">
-           			<Image src={balance_font} alt="Københavnerbilleder bogforside" class="mx-auto" />
-        </div>
-        
-        <!-- Square with text -->
-        <div class="text-center">
-            <div class="square mx-auto flex items-center justify-center">
-                <p class="text-center px-4">Ideen bag denne typografi er at skabe en balance mellem det bløde og hårde, kantede og formede, udadvendte og indadvendte</p>
+            <!-- Buttons -->
+            <div class="text-right mb-4">
+                <a href="#om_typografien" class="button">Om typografien</a>
+                <a href="#om_processen" class="button">Om processen</a>
+            </div>
+            <!-- Green line -->
+            <div class="green-line"></div>
+            
+            <!-- Picture -->
+            <div class="text-center mb-4">
+                <Image src={balance_font} alt="Københavnerbilleder bogforside" class="mx-auto" />
+            </div>
+            
+            <!-- Square with text -->
+            <div class="text-center mb-4">
+                <div class="square mx-auto flex items-center justify-center">
+                    <p class="text-center">Ideen bag denne typografi er at skabe en balance mellem det bløde og hårde, kantede og formede, udadvendte og indadvendte</p>
+                </div>
+            </div>
+
+            <!-- Two columns section -->
+            <div  class="flex justify-center mb-8" id="om_typografien">
+                <!-- Column 1 -->
+                <div class="column w-1/2">
+                    <h1 class="text-green font-bold mb-4">Om typografien</h1>
+                    <h3 class="text-green font-bold mb-2">En enkel men unik display font, der minder læseren om at finde balancen i tilværelsen.</h3>
+                    <p>Balance skrifttypen er ikke kun visuelt tiltalende, men den formidler også en symbolsk betydning. Den minder os om vigtigheden af balance i vores liv - en balance mellem arbejde og hvile, mellem ambitioner og realiteter, mellem krop og sind. Gennem sine former og design opmuntrer Balance os til at søge efter harmoni i alt, hvad vi gør. Uanset om den bruges i trykte medier eller på skærmen, tilføjer Balance skrifttypen en subtil elegance og en følelse af ro til enhver tekst. Med sit enkle, men kraftfulde udtryk, minder den os om den skønhed, der findes i balance og symmetri.</p>
+                </div>
+                <!-- Column 2 -->
+                <div class="column w-1/2">
+                    <Image src={mockup1} alt="Københavnerbilleder bogforside" class="mx-auto" />
+                </div>
+            </div>
+
+            <!-- Additional Two columns section with images -->
+            <div class="flex justify-center mb-8" id="om_processen">
+                <!-- Column 1 -->
+                <div class="column w-1/2">
+                    <Image src={mockup2} alt="Description of Image 2" class="mx-auto" />
+                </div>
+                <!-- Column 2 -->
+                <div class="column w-1/2">
+                    <Image src={mockup3} alt="Description of Image 3" class="mx-auto" />
+                </div>
+            </div>
+
+            <!-- Additional section about the process -->
+            <div class="mb-8">
+                <h1 class="text-green font-bold mb-4">Om processen</h1>
+                <h4 class="text-green font-bold mb-2">At skabe skrifttypen "Balance" var en proces, der krævede omhu, kreativitet og en dyb forståelse for både typografi og det konceptuelle tema, balance. Her er et overblik over den grundlæggende proces bag udviklingen af denne font:</h4>
+                <p>Konceptudvikling: Processen startede med en omfattende fase af konceptudvikling, hvor jeg udforskede ideen om balance og hvordan den kunne manifestere sig visuelt i en skrifttype. Jeg overvejede, hvilke former, linjer og proportioner der bedst ville udtrykke denne idé.</p>
+                <p>Skitsering og Design: Derefter gik jeg i gang med at skitse forskellige bogstavsformer og eksperimentere med forskellige typografiske elementer. Jeg fokuserede på at skabe bogstaver, der udstrålede symmetri, stabilitet og harmoni. Jeg testede forskellige vægtninger af linjer og former for at opnå den ønskede balance.</p>
+                <p>Digitalisering: Når jeg havde udviklet en række håndskitser, begyndte jeg at digitalisere dem ved hjælp af specialiserede typografiske softwareværktøjer. Jeg finjusterede formene, justerede proportionerne og sikrede, at hver enkelt bogstav integrerede sig smidigt med resten af skrifttypen.</p>
+                <p>Testning og Tilpasning: Efter den første digitaliseringstilgang testede jeg skrifttypen i forskellige kontekster og i forskellige størrelser for at sikre, at den var læsbar og æstetisk tiltalende. Jeg foretog eventuelle nødvendige tilpasninger baseret på feedback og observationer.</p>
             </div>
         </div>
-          <!-- Two columns section -->
-        <div class="flex justify-center mb-8">
-            <!-- Column 1 -->
-            <div class="column w-1/2 px-4">
-                <h1 class="text-green-500 font-bold">Om typografien</h1>
-                <h3 class="text-green-500 font-bold">En enkel men unik display font, der minder læseren om at finde balancen i tilværelsen.</h3>
-                <p>Balance skrifttypen er ikke kun visuelt tiltalende, men den formidler også en symbolsk betydning. Den minder os om vigtigheden af balance i vores liv - en balance mellem arbejde og hvile, mellem ambitioner og realiteter, mellem krop og sind. Gennem sine former og design opmuntrer Balance os til at søge efter harmoni i alt, hvad vi gør. Uanset om den bruges i trykte medier eller på skærmen, tilføjer Balance skrifttypen en subtil elegance og en følelse af ro til enhver tekst. Med sit enkle, men kraftfulde udtryk, minder den os om den skønhed, der findes i balance og symmetri.</p>
+
+
+  
+
+         <!-- Additional Two columns section with images -->
+            <div class="flex justify-center mb-8">
+                <!-- Column 1 -->
+                <div class="column w-1/2">
+                    <Image src={mockup2} alt="Description of Image 2" class="mx-auto" />
+                </div>
+                <!-- Column 2 -->
+                <div class="column w-1/2">
+                    <Image src={mockup3} alt="Description of Image 3" class="mx-auto" />
+                </div>
             </div>
-            <!-- Column 2 -->
-            <div class="column w-1/2 px-4">
-                	<Image src={mockup1} alt="Københavnerbilleder bogforside" class="mx-auto" />
-            </div>
-    </div>
-</body>
+    </body>
+</MainLayout>
